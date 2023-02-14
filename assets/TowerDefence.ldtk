@@ -11,7 +11,7 @@
 	"iid": "046aeef0-9f30-11ed-8c98-c91121a57968",
 	"jsonVersion": "1.2.5",
 	"appBuildId": 464870,
-	"nextUid": 51,
+	"nextUid": 52,
 	"identifierStyle": "Capitalize",
 	"toc": [],
 	"worldLayout": "GridVania",
@@ -825,16 +825,16 @@
 			"pivotY": 0,
 			"fieldDefs": [
 				{
-					"identifier": "Start_Patrol",
+					"identifier": "Enemy_Type",
 					"doc": null,
-					"__type": "EntityRef",
-					"uid": 46,
-					"type": "F_EntityRef",
+					"__type": "LocalEnum.Enemy_Type",
+					"uid": 49,
+					"type": "F_Enum(48)",
 					"isArray": false,
 					"canBeNull": false,
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
-					"editorDisplayMode": "RefLinkBetweenCenters",
+					"editorDisplayMode": "Hidden",
 					"editorDisplayPos": "Above",
 					"editorLinkStyle": "StraightArrow",
 					"editorAlwaysShow": false,
@@ -852,24 +852,24 @@
 					"symmetricalRef": false,
 					"autoChainRef": true,
 					"allowOutOfLevelRef": true,
-					"allowedRefs": "OnlyTags",
-					"allowedRefTags": ["Patrol"],
+					"allowedRefs": "OnlySame",
+					"allowedRefTags": [],
 					"tilesetUid": null
 				},
 				{
-					"identifier": "Enemy_Type",
+					"identifier": "Patrol",
 					"doc": null,
-					"__type": "LocalEnum.Enemy_Type",
-					"uid": 49,
-					"type": "F_Enum(48)",
-					"isArray": false,
-					"canBeNull": false,
+					"__type": "Array<Point>",
+					"uid": 51,
+					"type": "F_Point",
+					"isArray": true,
+					"canBeNull": true,
 					"arrayMinLength": null,
 					"arrayMaxLength": null,
-					"editorDisplayMode": "Hidden",
+					"editorDisplayMode": "PointPath",
 					"editorDisplayPos": "Above",
-					"editorLinkStyle": "StraightArrow",
-					"editorAlwaysShow": false,
+					"editorLinkStyle": "ArrowsLine",
+					"editorAlwaysShow": true,
 					"editorShowInWorld": true,
 					"editorCutLongValues": true,
 					"editorTextSuffix": null,
@@ -911,97 +911,6 @@
 			"tilesetId": 3,
 			"tileRenderMode": "FitInside",
 			"tileRect": { "tilesetUid": 3, "x": 912, "y": 784, "w": 32, "h": 32 },
-			"nineSliceBorders": [],
-			"maxCount": 0,
-			"limitScope": "PerLevel",
-			"limitBehavior": "MoveLastOne",
-			"pivotX": 0,
-			"pivotY": 0,
-			"fieldDefs": []
-		},
-		{
-			"identifier": "Patrol_Route_Point",
-			"uid": 44,
-			"tags": ["Patrol"],
-			"exportToToc": false,
-			"doc": null,
-			"width": 16,
-			"height": 16,
-			"resizableX": false,
-			"resizableY": false,
-			"keepAspectRatio": false,
-			"tileOpacity": 1,
-			"fillOpacity": 1,
-			"lineOpacity": 1,
-			"hollow": false,
-			"color": "#EAD4AA",
-			"renderMode": "Cross",
-			"showName": true,
-			"tilesetId": null,
-			"tileRenderMode": "FitInside",
-			"tileRect": null,
-			"nineSliceBorders": [],
-			"maxCount": 0,
-			"limitScope": "PerLevel",
-			"limitBehavior": "MoveLastOne",
-			"pivotX": 0,
-			"pivotY": 0,
-			"fieldDefs": [
-				{
-					"identifier": "Next_Point",
-					"doc": null,
-					"__type": "EntityRef",
-					"uid": 47,
-					"type": "F_EntityRef",
-					"isArray": false,
-					"canBeNull": false,
-					"arrayMinLength": null,
-					"arrayMaxLength": null,
-					"editorDisplayMode": "RefLinkBetweenCenters",
-					"editorDisplayPos": "Above",
-					"editorLinkStyle": "ArrowsLine",
-					"editorAlwaysShow": false,
-					"editorShowInWorld": true,
-					"editorCutLongValues": true,
-					"editorTextSuffix": null,
-					"editorTextPrefix": null,
-					"useForSmartColor": false,
-					"min": null,
-					"max": null,
-					"regex": null,
-					"acceptFileTypes": null,
-					"defaultOverride": null,
-					"textLanguageMode": null,
-					"symmetricalRef": false,
-					"autoChainRef": true,
-					"allowOutOfLevelRef": true,
-					"allowedRefs": "OnlyTags",
-					"allowedRefTags": ["Patrol"],
-					"tilesetUid": null
-				}
-			]
-		},
-		{
-			"identifier": "End_Point",
-			"uid": 45,
-			"tags": ["Patrol"],
-			"exportToToc": false,
-			"doc": null,
-			"width": 16,
-			"height": 16,
-			"resizableX": false,
-			"resizableY": false,
-			"keepAspectRatio": false,
-			"tileOpacity": 1,
-			"fillOpacity": 0.08,
-			"lineOpacity": 0,
-			"hollow": false,
-			"color": "#E4A672",
-			"renderMode": "Tile",
-			"showName": true,
-			"tilesetId": 3,
-			"tileRenderMode": "FitInside",
-			"tileRect": { "tilesetUid": 3, "x": 832, "y": 576, "w": 64, "h": 64 },
 			"nineSliceBorders": [],
 			"maxCount": 0,
 			"limitScope": "PerLevel",
@@ -1093,19 +1002,78 @@
 							"defUid": 41,
 							"px": [528,0],
 							"fieldInstances": [
-								{ "__identifier": "Start_Patrol", "__value": {
-									"entityIid": "5d31b100-9f30-11ed-8c98-ef421787bbec",
-									"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-									"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-									"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-								}, "__type": "EntityRef", "__tile": null, "defUid": 46, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["5d31b100-9f30-11ed-8c98-ef421787bbec"]
-								}] },
 								{ "__identifier": "Enemy_Type", "__value": "Fast", "__type": "LocalEnum.Enemy_Type", "__tile": null, "defUid": 49, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Fast"]
-								}] }
+								}] },
+								{ "__identifier": "Patrol", "__value": [
+									{ "cx": 33, "cy": 16 },
+									{ "cx": 69, "cy": 16 },
+									{ "cx": 69, "cy": 19 },
+									{ "cx": 7, "cy": 19 },
+									{ "cx": 7, "cy": 24 },
+									{ "cx": 71, "cy": 24 },
+									{ "cx": 71, "cy": 29 },
+									{ "cx": 7, "cy": 29 },
+									{ "cx": 7, "cy": 34 },
+									{ "cx": 71, "cy": 34 },
+									{ "cx": 71, "cy": 40 },
+									{ "cx": 7, "cy": 40 },
+									{ "cx": 7, "cy": 47 }
+								], "__type": "Array<Point>", "__tile": null, "defUid": 51, "realEditorValues": [
+									{
+										"id": "V_String",
+										"params": ["33,16"]
+									},
+									{
+										"id": "V_String",
+										"params": ["69,16"]
+									},
+									{
+										"id": "V_String",
+										"params": ["69,19"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7,19"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7,24"]
+									},
+									{
+										"id": "V_String",
+										"params": ["71,24"]
+									},
+									{
+										"id": "V_String",
+										"params": ["71,29"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7,29"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7,34"]
+									},
+									{
+										"id": "V_String",
+										"params": ["71,34"]
+									},
+									{
+										"id": "V_String",
+										"params": ["71,40"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7,40"]
+									},
+									{
+										"id": "V_String",
+										"params": ["7,47"]
+									}
+								] }
 							]
 						},
 						{
@@ -1121,19 +1089,78 @@
 							"defUid": 41,
 							"px": [576,0],
 							"fieldInstances": [
-								{ "__identifier": "Start_Patrol", "__value": {
-									"entityIid": "91d6dd40-9f30-11ed-8c98-cfb9e0b369db",
-									"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-									"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-									"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-								}, "__type": "EntityRef", "__tile": null, "defUid": 46, "realEditorValues": [{
-									"id": "V_String",
-									"params": ["91d6dd40-9f30-11ed-8c98-cfb9e0b369db"]
-								}] },
 								{ "__identifier": "Enemy_Type", "__value": "Slow", "__type": "LocalEnum.Enemy_Type", "__tile": null, "defUid": 49, "realEditorValues": [{
 									"id": "V_String",
 									"params": ["Slow"]
-								}] }
+								}] },
+								{ "__identifier": "Patrol", "__value": [
+									{ "cx": 36, "cy": 14 },
+									{ "cx": 72, "cy": 14 },
+									{ "cx": 72, "cy": 21 },
+									{ "cx": 5, "cy": 21 },
+									{ "cx": 5, "cy": 26 },
+									{ "cx": 73, "cy": 26 },
+									{ "cx": 73, "cy": 31 },
+									{ "cx": 5, "cy": 31 },
+									{ "cx": 5, "cy": 37 },
+									{ "cx": 73, "cy": 37 },
+									{ "cx": 73, "cy": 43 },
+									{ "cx": 5, "cy": 43 },
+									{ "cx": 5, "cy": 47 }
+								], "__type": "Array<Point>", "__tile": null, "defUid": 51, "realEditorValues": [
+									{
+										"id": "V_String",
+										"params": ["36,14"]
+									},
+									{
+										"id": "V_String",
+										"params": ["72,14"]
+									},
+									{
+										"id": "V_String",
+										"params": ["72,21"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5,21"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5,26"]
+									},
+									{
+										"id": "V_String",
+										"params": ["73,26"]
+									},
+									{
+										"id": "V_String",
+										"params": ["73,31"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5,31"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5,37"]
+									},
+									{
+										"id": "V_String",
+										"params": ["73,37"]
+									},
+									{
+										"id": "V_String",
+										"params": ["73,43"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5,43"]
+									},
+									{
+										"id": "V_String",
+										"params": ["5,47"]
+									}
+								] }
 							]
 						},
 						{
@@ -1961,650 +1988,6 @@
 							"defUid": 43,
 							"px": [624,192],
 							"fieldInstances": []
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [33,2],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "5d31b100-9f30-11ed-8c98-ef421787bbec",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [528,32],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "63cfdff0-9f30-11ed-8c98-59aa23410c6b",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["63cfdff0-9f30-11ed-8c98-59aa23410c6b"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [33,16],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "63cfdff0-9f30-11ed-8c98-59aa23410c6b",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [528,256],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "64d8c470-9f30-11ed-8c98-8d8eb1a8df38",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["64d8c470-9f30-11ed-8c98-8d8eb1a8df38"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [69,16],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "64d8c470-9f30-11ed-8c98-8d8eb1a8df38",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1104,256],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "65a25600-9f30-11ed-8c98-3b485aa9b50d",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["65a25600-9f30-11ed-8c98-3b485aa9b50d"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [69,19],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "65a25600-9f30-11ed-8c98-3b485aa9b50d",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1104,304],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "67ca6620-9f30-11ed-8c98-210dafa1a2a0",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["67ca6620-9f30-11ed-8c98-210dafa1a2a0"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [7,19],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "67ca6620-9f30-11ed-8c98-210dafa1a2a0",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [112,304],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "688b6c30-9f30-11ed-8c98-9750333c7715",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["688b6c30-9f30-11ed-8c98-9750333c7715"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [7,24],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "688b6c30-9f30-11ed-8c98-9750333c7715",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [112,384],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "6a178a70-9f30-11ed-8c98-5bc69f6154a7",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["6a178a70-9f30-11ed-8c98-5bc69f6154a7"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [71,24],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "6a178a70-9f30-11ed-8c98-5bc69f6154a7",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1136,384],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "6b7804d0-9f30-11ed-8c98-99c9285596b0",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["6b7804d0-9f30-11ed-8c98-99c9285596b0"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [71,29],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "6b7804d0-9f30-11ed-8c98-99c9285596b0",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1136,464],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "6d3f7e60-9f30-11ed-8c98-3370142ee0dd",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["6d3f7e60-9f30-11ed-8c98-3370142ee0dd"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [7,29],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "6d3f7e60-9f30-11ed-8c98-3370142ee0dd",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [112,464],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "6ddcf6e0-9f30-11ed-8c98-51aabb48f2ca",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["6ddcf6e0-9f30-11ed-8c98-51aabb48f2ca"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [7,34],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "6ddcf6e0-9f30-11ed-8c98-51aabb48f2ca",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [112,544],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "6eabb890-9f30-11ed-8c98-497abc012968",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["6eabb890-9f30-11ed-8c98-497abc012968"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [71,34],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "6eabb890-9f30-11ed-8c98-497abc012968",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1136,544],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "7004dff0-9f30-11ed-8c98-51489b2c9063",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["7004dff0-9f30-11ed-8c98-51489b2c9063"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [71,40],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "7004dff0-9f30-11ed-8c98-51489b2c9063",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1136,640],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "713067a0-9f30-11ed-8c98-8927bfc15cbb",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["713067a0-9f30-11ed-8c98-8927bfc15cbb"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [7,40],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "713067a0-9f30-11ed-8c98-8927bfc15cbb",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [112,640],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "724e5ac0-9f30-11ed-8c98-25d9788afd4d",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["724e5ac0-9f30-11ed-8c98-25d9788afd4d"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [7,46],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "724e5ac0-9f30-11ed-8c98-25d9788afd4d",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [112,736],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "8f5b2ee0-9f30-11ed-8c98-774a221f1516",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["8f5b2ee0-9f30-11ed-8c98-774a221f1516"]
-							}] }]
-						},
-						{
-							"__identifier": "End_Point",
-							"__grid": [7,47],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": { "tilesetUid": 3, "x": 832, "y": 576, "w": 64, "h": 64 },
-							"__smartColor": "#E4A672",
-							"iid": "8f5b2ee0-9f30-11ed-8c98-774a221f1516",
-							"width": 16,
-							"height": 16,
-							"defUid": 45,
-							"px": [112,752],
-							"fieldInstances": []
-						},
-						{
-							"__identifier": "End_Point",
-							"__grid": [5,47],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": { "tilesetUid": 3, "x": 832, "y": 576, "w": 64, "h": 64 },
-							"__smartColor": "#E4A672",
-							"iid": "8fe80590-9f30-11ed-8c98-59e8ea6c52fb",
-							"width": 16,
-							"height": 16,
-							"defUid": 45,
-							"px": [80,752],
-							"fieldInstances": []
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [36,2],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "91d6dd40-9f30-11ed-8c98-cfb9e0b369db",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [576,32],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9301efc0-9f30-11ed-8c98-db61caea7d12",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9301efc0-9f30-11ed-8c98-db61caea7d12"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [36,14],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9301efc0-9f30-11ed-8c98-db61caea7d12",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [576,224],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "93f29150-9f30-11ed-8c98-219b9278d90d",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["93f29150-9f30-11ed-8c98-219b9278d90d"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [72,14],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "93f29150-9f30-11ed-8c98-219b9278d90d",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1152,224],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "94c26470-9f30-11ed-8c98-db1ebeb76a6d",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["94c26470-9f30-11ed-8c98-db1ebeb76a6d"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [72,21],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "94c26470-9f30-11ed-8c98-db1ebeb76a6d",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1152,336],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9688cc90-9f30-11ed-8c98-15e28b233336",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9688cc90-9f30-11ed-8c98-15e28b233336"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [5,21],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9688cc90-9f30-11ed-8c98-15e28b233336",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [80,336],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "970e9e60-9f30-11ed-8c98-c30fc01766d1",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["970e9e60-9f30-11ed-8c98-c30fc01766d1"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [5,26],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "970e9e60-9f30-11ed-8c98-c30fc01766d1",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [80,416],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9848f320-9f30-11ed-8c98-cfbb3eb4ed40",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9848f320-9f30-11ed-8c98-cfbb3eb4ed40"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [73,26],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9848f320-9f30-11ed-8c98-cfbb3eb4ed40",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1168,416],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "98d813c0-9f30-11ed-8c98-fb639770becf",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["98d813c0-9f30-11ed-8c98-fb639770becf"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [73,31],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "98d813c0-9f30-11ed-8c98-fb639770becf",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1168,496],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9a22e340-9f30-11ed-8c98-a3c8d3b9e768",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9a22e340-9f30-11ed-8c98-a3c8d3b9e768"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [5,31],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9a22e340-9f30-11ed-8c98-a3c8d3b9e768",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [80,496],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9ac2f3d0-9f30-11ed-8c98-ddabd5edc21c",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9ac2f3d0-9f30-11ed-8c98-ddabd5edc21c"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [5,37],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9ac2f3d0-9f30-11ed-8c98-ddabd5edc21c",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [80,592],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9bf2c140-9f30-11ed-8c98-ff77878a65f3",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9bf2c140-9f30-11ed-8c98-ff77878a65f3"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [73,37],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9bf2c140-9f30-11ed-8c98-ff77878a65f3",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1168,592],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "9e8dde80-9f30-11ed-8c98-7bf0f3718636",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["9e8dde80-9f30-11ed-8c98-7bf0f3718636"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [73,43],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "9e8dde80-9f30-11ed-8c98-7bf0f3718636",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [1168,688],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "a1f23f30-9f30-11ed-8c98-ab6ab7ae24d7",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["a1f23f30-9f30-11ed-8c98-ab6ab7ae24d7"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [5,43],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "a1f23f30-9f30-11ed-8c98-ab6ab7ae24d7",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [80,688],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "a297ce00-9f30-11ed-8c98-2b46102fc27a",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["a297ce00-9f30-11ed-8c98-2b46102fc27a"]
-							}] }]
-						},
-						{
-							"__identifier": "Patrol_Route_Point",
-							"__grid": [5,46],
-							"__pivot": [0,0],
-							"__tags": ["Patrol"],
-							"__tile": null,
-							"__smartColor": "#EAD4AA",
-							"iid": "a297ce00-9f30-11ed-8c98-2b46102fc27a",
-							"width": 16,
-							"height": 16,
-							"defUid": 44,
-							"px": [80,736],
-							"fieldInstances": [{ "__identifier": "Next_Point", "__value": {
-								"entityIid": "8fe80590-9f30-11ed-8c98-59e8ea6c52fb",
-								"layerIid": "22f79a60-9f30-11ed-8c98-7bca25135885",
-								"levelIid": "61b7b6a0-9f30-11ed-bf18-25f97ad588eb",
-								"worldIid": "046bd950-9f30-11ed-8c98-8b9dbce208a7"
-							}, "__type": "EntityRef", "__tile": null, "defUid": 47, "realEditorValues": [{
-								"id": "V_String",
-								"params": ["8fe80590-9f30-11ed-8c98-59e8ea6c52fb"]
-							}] }]
 						}
 					]
 				},
